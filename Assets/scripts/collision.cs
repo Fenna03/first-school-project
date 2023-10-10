@@ -10,6 +10,8 @@ public class collision : MonoBehaviour
     public float xSpeed = 4f;
     public float ySpeed = 4f;
     public TMP_Text scoreText;
+    public int leftScore = 0;
+    public int rightScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -35,18 +37,27 @@ public class collision : MonoBehaviour
         else if (collision.gameObject.CompareTag("vertical"))
         {
             //Debug.Log("AUW! MY SIDES");
-            xSpeed = xSpeed * -1.05f;
+            xSpeed = xSpeed * -1f;
         }
         else if(collision.gameObject.CompareTag("wallleft"))
         {
+            xSpeed = xSpeed * -1f;
             xPosition = 0f;
             yPosition = 0f;
+            rightScore++;
+            scoreText.text = leftScore + " | " + rightScore;
         }
         else if (collision.gameObject.CompareTag("wallright"))
         {
+            xSpeed = xSpeed * -1f;
             xPosition = 0f;
             yPosition = 0f;
+            leftScore++;
+            scoreText.text = leftScore + " | " + rightScore;
         }
-
+        else if(collision.gameObject.CompareTag("Player"))
+        {
+            xSpeed *= -1.1f;
+        }
     }
 }
