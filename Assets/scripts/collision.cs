@@ -13,6 +13,7 @@ public class collision : MonoBehaviour
     public TMP_Text scoreText;
     public int leftScore = 0;
     public int rightScore = 0;
+    public int winScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,19 @@ public class collision : MonoBehaviour
         xPosition = xPosition + xSpeed * Time.deltaTime;
         yPosition = yPosition + ySpeed * Time.deltaTime;
         transform.position = new Vector3(xPosition, yPosition, 0f);
+        if(leftScore >= 15)
+        {
+            scoreText.text = "Left player has won!";
+            xPosition = 0;
+            yPosition = 0;
+        }
+        else if(rightScore >= 15)
+        {
+            scoreText.text = "Right player has won!";
+            xPosition = 0;
+            yPosition = 0;
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
