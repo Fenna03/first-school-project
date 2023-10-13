@@ -14,6 +14,7 @@ public class collision : MonoBehaviour
     public int leftScore = 0;
     public int rightScore = 0;
     public int winScore = 0;
+    public bool pause = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +25,14 @@ public class collision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        xPosition = xPosition + xSpeed * Time.deltaTime;
-        yPosition = yPosition + ySpeed * Time.deltaTime;
-        transform.position = new Vector3(xPosition, yPosition, 0f);
+
+        if (pause == false)
+        {
+            xPosition = xPosition + xSpeed * Time.deltaTime;
+            yPosition = yPosition + ySpeed * Time.deltaTime;
+            transform.position = new Vector3(xPosition, yPosition, 0f);
+        }
+
         if(leftScore >= 15)
         {
             scoreText.text = "Left player has won!";
@@ -41,7 +47,6 @@ public class collision : MonoBehaviour
         }
 
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("horizontal") || collision.gameObject.CompareTag("horizontal2"))
@@ -72,7 +77,15 @@ public class collision : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("Player"))
         {
-            xSpeed *= -1.1f;
+            xSpeed *= -1.2f;
         }
+    }
+
+    public void pausefunction()
+    {
+        pause = !pause;
+
+        gameObject.SetActive(!pause);
+
     }
 }
