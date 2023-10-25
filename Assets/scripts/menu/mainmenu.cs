@@ -33,6 +33,10 @@ public class mainmenu : MonoBehaviour
         {
             SceneManager.LoadScene("breakout");
         }
+        if(gameMode == 5)
+        {
+            SceneManager.LoadScene("start menu");
+        }
     }
 
     //quits gameMode
