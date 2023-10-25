@@ -412,9 +412,9 @@ GameObject:
   m_Component:
   - component: {fileID: 167771220}
   - component: {fileID: 167771219}
-  - component: {fileID: 167771222}
   - component: {fileID: 167771221}
   - component: {fileID: 167771223}
+  - component: {fileID: 167771224}
   m_Layer: 0
   m_Name: paddle
   m_TagString: vertical
@@ -534,21 +534,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &167771222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167771218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908b0ff294054d644869d648b47bd0a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  Bottom: 0
-  Top: 0
 --- !u!50 &167771223
 Rigidbody2D:
   serializedVersion: 4
@@ -576,6 +561,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &167771224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167771218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a3b72f9e400d349bf70cd02d1bfcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  Bottom: 0
+  Top: 0
 --- !u!1 &257689248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,8 +2741,8 @@ GameObject:
   - component: {fileID: 1997032631}
   - component: {fileID: 1997032632}
   m_Layer: 0
-  m_Name: paddle2
-  m_TagString: vertical2
+  m_Name: paddle
+  m_TagString: vertical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2895,7 +2895,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1997032625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7661a467b78ea58469a36e12a7b91eea, type: 3}
+  m_Script: {fileID: 11500000, guid: 09aa526cb0d4a7b47b2dadfa999c4c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
@@ -2916,7 +2916,7 @@ GameObject:
   - component: {fileID: 2131452312}
   m_Layer: 0
   m_Name: ball
-  m_TagString: ball
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

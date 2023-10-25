@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-    public bool pause = true; 
-
+    public bool pause = true;
+    //public byte gameMode;
 
     public AudioMixer audioMixer;
     public Slider volumeSlider;
@@ -15,4 +15,10 @@ public class OptionsMenu : MonoBehaviour
     {
         audioMixer.SetFloat("volume", volume);
     }
+
+    // if (button 2 players == clicked) 
+    //{
+        //gameMode == 1;
+    //} voor allemaal
+
 }

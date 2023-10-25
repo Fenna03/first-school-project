@@ -10,6 +10,9 @@ TagManager:
   - wallleft
   - wallright
   - gameMusic
+  - ball
+  - vertical2
+  - brick
   layers:
   - Default
   - TransparentFX

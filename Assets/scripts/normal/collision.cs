@@ -39,13 +39,12 @@ public class collision : MonoBehaviour
             xPosition = 0;
             yPosition = 0;
         }
-        else if(rightScore >= 15)
+        if(rightScore >= 15)
         {
             scoreText.text = "Right player has won!";
             xPosition = 0;
             yPosition = 0;
         }
-
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,12 +53,19 @@ public class collision : MonoBehaviour
             //Debug.Log("AUW! MY HEAD OR FEET");
             ySpeed = ySpeed * -1f;
         }
-        else if (collision.gameObject.CompareTag("vertical"))
+        if (collision.gameObject.CompareTag("vertical") || collision.gameObject.CompareTag("vertical2"))
         {
-            //Debug.Log("AUW! MY SIDES");
-            xSpeed = xSpeed * -1f;
+            if (xSpeed >= 8 || xSpeed <= -8)
+            {
+                //Debug.Log("AUW! MY SIDES");
+                xSpeed = xSpeed * -1f;
+            }
+            else
+            {
+                xSpeed = xSpeed * -1.1f;
+            }
         }
-        else if(collision.gameObject.CompareTag("wallleft"))
+        if(collision.gameObject.CompareTag("wallleft"))
         {
             xSpeed = xSpeed * -1f;
             xPosition = 0f;
@@ -67,17 +73,13 @@ public class collision : MonoBehaviour
             rightScore++;
             scoreText.text = leftScore + " | " + rightScore;
         }
-        else if (collision.gameObject.CompareTag("wallright"))
+        if (collision.gameObject.CompareTag("wallright"))
         {
             xSpeed = xSpeed * -1f;
             xPosition = 0f;
             yPosition = 0f;
             leftScore++;
             scoreText.text = leftScore + " | " + rightScore;
-        }
-        else if(collision.gameObject.CompareTag("Player"))
-        {
-            xSpeed *= -1.2f;
         }
     }
 
