@@ -15,11 +15,13 @@ public class collision : MonoBehaviour
     public int rightScore = 0;
     public int winScore = 0;
     public bool pause = false;
+    public new AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = new Vector3(xPosition, yPosition, 0f);
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,13 +50,18 @@ public class collision : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.CompareTag("horizontal") || collision.gameObject.CompareTag("horizontal2"))
+            audio.Play();
+
         {
             //Debug.Log("AUW! MY HEAD OR FEET");
             ySpeed = ySpeed * -1f;
         }
         if (collision.gameObject.CompareTag("vertical") || collision.gameObject.CompareTag("vertical2"))
         {
+            audio.Play();
+
             if (xSpeed >= 8 || xSpeed <= -8)
             {
                 //Debug.Log("AUW! MY SIDES");
@@ -67,6 +74,7 @@ public class collision : MonoBehaviour
         }
         if(collision.gameObject.CompareTag("wallleft"))
         {
+
             xSpeed = xSpeed * -1f;
             xPosition = 0f;
             yPosition = 0f;
@@ -75,6 +83,7 @@ public class collision : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("wallright"))
         {
+
             xSpeed = xSpeed * -1f;
             xPosition = 0f;
             yPosition = 0f;

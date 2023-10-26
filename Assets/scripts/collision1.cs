@@ -42,17 +42,26 @@ public class collision1 : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("horizontal"))
         {
-            if (xSpeed <= 8 || xSpeed <= -8)
+            if (ySpeed >= 6 || ySpeed <= -6)
             {
-                //Debug.Log("AUW! MY HEAD OR FEET");
+                //Debug.Log("AUW! MY SIDES");
                 ySpeed = ySpeed * -1f;
-
+            }
+            else
+            {
+                ySpeed = ySpeed * -1.1f;
             }
         }
         if(collision.gameObject.CompareTag("brick"))
         {
             Destroy(collision.gameObject);
             ySpeed = ySpeed * -1f;
+        }
+        if (collision.gameObject.CompareTag("wallleft"))
+        {
+            ySpeed = ySpeed * -1f;
+            xPosition = 0f;
+            yPosition = -3.15f;
         }
     }
 
