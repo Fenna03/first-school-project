@@ -34,19 +34,6 @@ public class collision1 : MonoBehaviour
             yPosition = yPosition + ySpeed * Time.deltaTime;
             transform.position = new Vector3(xPosition, yPosition, 0f);
         }
-
-        if (leftScore >= 15)
-        {
-            scoreText.text = "Left player has won!";
-            xPosition = 0;
-            yPosition = 0;
-        }
-        if (rightScore >= 15)
-        {
-            scoreText.text = "Right player has won!";
-            xPosition = 0;
-            yPosition = 0;
-        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -83,8 +70,6 @@ public class collision1 : MonoBehaviour
             ySpeed = ySpeed * -1f;
             xPosition = 0f;
             yPosition = -3.15f;
-            rightScore++;
-            scoreText.text = leftScore + " | " + rightScore;
         }
         if (collision.gameObject.CompareTag("wallright"))
         {
@@ -92,8 +77,6 @@ public class collision1 : MonoBehaviour
             xSpeed = xSpeed * -1f;
             xPosition = 0f;
             yPosition = 0f;
-            leftScore++;
-            scoreText.text = leftScore + " | " + rightScore;
         }
     }
 
