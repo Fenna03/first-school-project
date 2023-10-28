@@ -61,7 +61,7 @@ public class collision : MonoBehaviour
         if (collision.gameObject.CompareTag("vertical") || collision.gameObject.CompareTag("vertical2"))
         {
             audio.Play();
-
+            ySpeed = ySpeed * -1f;
             if (xSpeed >= 8 || xSpeed <= -8)
             {
                 //Debug.Log("AUW! MY SIDES");
