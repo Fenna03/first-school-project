@@ -921,7 +921,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1785947365}
         m_TargetAssemblyTypeName: optionsAway, Assembly-CSharp
         m_MethodName: pausefunction
         m_Mode: 1
@@ -10295,10 +10295,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1785947365}
+        m_TargetAssemblyTypeName: optionsAway, Assembly-CSharp
+        m_MethodName: pausefunction
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10319,8 +10319,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: collision, Assembly-CSharp
+      - m_Target: {fileID: 2131452314}
+        m_TargetAssemblyTypeName: collision1, Assembly-CSharp
         m_MethodName: pausefunction
         m_Mode: 1
         m_Arguments:
@@ -12254,6 +12254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1785947364}
+  - component: {fileID: 1785947365}
   m_Layer: 0
   m_Name: Options.away
   m_TagString: Untagged
@@ -12309,6 +12310,25 @@ Transform:
   - {fileID: 1131951491}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1785947365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785947362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e059ead1fdc6144839add55330d488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xPosition: 2
+  yPosition: 2
+  xSpeed: 2
+  ySpeed: 4
+  scoreText: {fileID: 0}
+  pause: 0
+  audio: {fileID: 0}
 --- !u!1 &1786071953
 GameObject:
   m_ObjectHideFlags: 0
